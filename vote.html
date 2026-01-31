@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vote.css">
+
+</head>
+<body>
+    <div class="card">
+    <h1>Vote Validator</h1>
+    <input type="text" placeholder="Enter your name:" id="name">
+    <input type="number"  name="" id="age" placeholder="Age">
+    <button onclick="vote()"> Submit</button>
+    <p id="ans"> You can get your answer here</p>
+    </div>
+    <script>
+        function 
+        vote() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var ans = document.getElementById("ans");
+            // alert("Its me JS");
+            //alert(age);
+
+            if (name === "" || age === "") {
+                ans.innerHTML = "Please fill in all fields!";
+                ans.style.color = "orange";
+                return;
+            }
+
+            if (age >= 18) {
+                //alert("You are eligible to vote.")
+                ans.innerHTML = "Hello " + name + ", you are eligible to vote.";
+                ans.style.color = "#2d6a4f"; // Dark green
+            } else {
+                //alert("You are not eligible to vote.")
+                ans.innerHTML = "Hello " + name + ", you are not eligible to vote😢";
+                ans.style.color = "#a4161a"; // Dark red
+            }
+        } 
+    </script>
+</body>
+</html>
